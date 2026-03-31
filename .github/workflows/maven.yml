@@ -25,6 +25,7 @@ jobs:
           server-id: github
           server-username: ${{ secrets.LIBRARY_USERNAME }}
           server-password: ${{ secrets.LIBRARY_TOKEN }}
+          overwrite-settings: true
 
       - name: Bygg projektet
         run: mvn -B clean package
