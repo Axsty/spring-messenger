@@ -77,6 +77,15 @@
 
     </dependencies>
 
+
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/axsty/textformatter-library</url>
+        </repository>
+    </repositories>
+
+
     <build>
         <plugins>
             <plugin>

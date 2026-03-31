@@ -1,0 +1,26 @@
+name: Maven Build
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checka ut koden
+          uses: actions/checkout@v4
+
+        - name: Installera Java och konfigurera Maven auth
+          uses: actions/setup-java@v4
+          with:
+            distribution: temurin
+            java-version: '17'
+            server-id: github
+            server-username: ${{ secrets.LIBRARY_USERNAME }}
+            server-password: ${{ secrets.LIBRARY_TOKEN }}
+
+        - name: Bygg projektet
+          run: mvn -B clean package
