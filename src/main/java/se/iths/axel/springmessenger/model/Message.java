@@ -1,4 +1,14 @@
 package se.iths.axel.springmessenger.model;
 
-public class Message {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public abstract class Message {
+
+    private String recipient;
+    private String message;
+
+    public abstract String getType();
 }
